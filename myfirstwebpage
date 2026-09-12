@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reshma Kulal — Technical Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,600;1,9..144,420&family=Inter:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#161B22;
+    --paper:#F6F4EE;
+    --paper-dim:#EFEBE1;
+    --teal:#2F5D50;
+    --teal-soft:#e4ece9;
+    --gold:#A9791F;
+    --line:#DAD5C8;
+    --muted:#6B6A63;
+    --max:1040px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{background:var(--teal); color:var(--paper);}
+
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:480;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(246,244,238,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .nav-name{font-family:'Fraunces', serif; font-size:17px; font-weight:600;}
+  .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  .nav-links a{text-decoration:none; font-size:14px; color:var(--muted); transition:color .15s ease;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links{display:none;}
+  @media(min-width:720px){.nav-links{display:flex;}}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:96px 0 56px;}
+  .role-line{
+    color:var(--teal);
+    font-size:14.5px;
+    margin-bottom:22px;
+  }
+  h1.display{
+    font-size:clamp(40px, 7vw, 72px);
+    line-height:1.04;
+    max-width:11ch;
+  }
+  .lede{
+    max-width:52ch;
+    margin-top:26px;
+    font-size:18px;
+    color:#3A3E35;
+  }
+  .contact-row{
+    margin-top:34px;
+    display:flex; flex-wrap:wrap; gap:10px 22px;
+    font-size:14.5px;
+  }
+  .contact-row a{text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:2px; transition:border-color .15s ease;}
+  .contact-row a:hover{border-color:var(--teal);}
+
+  /* signal strip */
+  .signals{
+    margin-top:56px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+    display:flex; flex-wrap:wrap; gap:10px 40px;
+    color:var(--muted);
+  }
+  .signals span b{color:var(--ink); font-weight:500;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:88px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:24px; margin-bottom:48px;
+  }
+  .section-head h2{font-size:30px;}
+  .section-head .count{color:var(--muted);}
+
+  /* ---------- EXPERIENCE / ROADMAP ---------- */
+  .roadmap{position:relative;}
+  .roadmap::before{
+    content:"";
+    position:absolute; left:7px; top:8px; bottom:8px;
+    width:1px; background:var(--line);
+  }
+  .role{
+    position:relative;
+    padding-left:38px;
+    padding-bottom:64px;
+  }
+  .role:last-child{padding-bottom:0;}
+  .role::before{
+    content:"";
+    position:absolute; left:0; top:6px;
+    width:15px; height:15px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--teal);
+  }
+  .role.current::before{background:var(--teal);}
+  .role-top{
+    display:flex; flex-wrap:wrap; align-items:baseline;
+    gap:8px 16px; margin-bottom:6px;
+  }
+  .role-title{font-family:'Fraunces', serif; font-size:22px; font-weight:600;}
+  .role-org{color:var(--teal); font-size:15px;}
+  .role-time{color:var(--muted); margin-left:auto;}
+  .role-project{
+    font-size:14.5px; color:var(--muted); font-style:italic; margin-bottom:14px;
+  }
+  .role ul{
+    margin:0; padding-left:18px;
+    max-width:70ch;
+  }
+  .role li{margin-bottom:9px; padding-left:2px;}
+  .role li::marker{color:var(--teal);}
+  .role-tags{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;}
+  .role-tags span{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    padding:4px 9px; border:1px solid var(--line); border-radius:3px;
+    color:var(--muted);
+  }
+  .role.compact{padding-bottom:36px;}
+  .role.compact .role-title{font-size:18px;}
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{
+    display:grid; grid-template-columns:1fr; gap:36px;
+  }
+  @media(min-width:720px){.skill-grid{grid-template-columns:1fr 1fr;}}
+  .skill-group h3{
+    font-family:'IBM Plex Mono', monospace; font-weight:500;
+    font-size:13px; color:var(--teal); margin-bottom:14px;
+    text-transform:lowercase;
+  }
+  .skill-group .pillbox{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-group .pillbox span{
+    font-size:14px; padding:6px 12px;
+    background:var(--paper-dim);
+    border-radius:3px;
+  }
+
+  /* ---------- EDUCATION / CERTS ---------- */
+  .two-col{display:grid; grid-template-columns:1fr; gap:56px;}
+  @media(min-width:720px){.two-col{grid-template-columns:1fr 1fr;}}
+  .entry{padding:16px 0; border-bottom:1px solid var(--line);}
+  .entry:last-child{border-bottom:none;}
+  .entry-title{font-weight:500; font-size:15.5px;}
+  .entry-sub{color:var(--muted); font-size:14px; margin-top:2px;}
+
+  /* ---------- AWARDS ---------- */
+  .awards{display:grid; grid-template-columns:1fr; gap:0;}
+  @media(min-width:640px){.awards{grid-template-columns:1fr 1fr;}}
+  .award{
+    padding:20px 22px; border:1px solid var(--line);
+    margin:-1px 0 0 -1px;
+  }
+  .award-name{font-weight:500; font-size:15px; color:var(--gold);}
+  .award-desc{color:var(--muted); font-size:13.5px; margin-top:6px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:72px 0 96px;}
+  footer h2{font-size:32px; max-width:16ch; margin-bottom:28px;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:16px;}
+  .cta{
+    font-size:15px; text-decoration:none;
+    padding:13px 22px; border-radius:3px;
+    border:1px solid var(--ink);
+    transition:background .15s ease, color .15s ease;
+  }
+  .cta.primary{background:var(--ink); color:var(--paper);}
+  .cta.primary:hover{background:var(--teal); border-color:var(--teal);}
+  .cta.ghost:hover{background:var(--ink); color:var(--paper);}
+  .foot-meta{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; color:var(--muted); font-size:13px;
+    flex-wrap:wrap; gap:10px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Reshma Kulal</div>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="role-line mono">Technical Product Manager — Bengaluru, India</div>
+    <h1 class="display">I turn systems engineers build into products businesses can run on.</h1>
+    <p class="lede">Eight years moving between backlog and architecture diagram — currently Technical Lead &amp; Product Owner at Tech Mahindra, shipping a healthcare reporting platform migration and a GraphQL layer that unifies 74+ applications. CSPO® certified, PMI-ACP certified, MBA candidate at MAHE.</p>
+    <div class="contact-row">
+      <a href="mailto:reshmas2026@gmail.com">reshmas2026@gmail.com</a>
+      <a href="tel:+918971184699">+91 89711 84699</a>
+      <a href="https://www.linkedin.com/in/reshma-kulal" target="_blank" rel="noopener">linkedin.com/in/reshma-kulal</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="signals mono">
+      <span><b>8 yrs</b> in agile product delivery</span>
+      <span><b>74+ apps</b> unified under one GraphQL layer</span>
+      <span><b>75%</b> profit margin on current platform</span>
+      <span><b>4</b> domains — healthcare, life sciences, automotive, mining</span>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="count mono">2013 — present</span>
+    </div>
+
+    <div class="roadmap">
+
+      <div class="role current">
+        <div class="role-top">
+          <span class="role-title">Technical Lead &amp; Product Owner</span>
+          <span class="role-org">Tech Mahindra</span>
+          <span class="role-time mono">Sep 2025 — Present</span>
+        </div>
+        <div class="role-project">Healthcare Reporting &amp; Life Sciences Lab Platform</div>
+        <ul>
+          <li>Led the migration of a healthcare report-generation application from Ruby on Rails to .NET 10 and Google Cloud, externalizing template configuration to support dynamic report updates.</li>
+          <li>Directed delivery of a GraphQL server giving unified access to 74+ applications and the core database behind a life sciences lab test product.</li>
+          <li>Championed adoption of Agentic AI, MCP servers, and skills-based development — contributing to a 75% profit margin on the platform.</li>
+          <li>Translated system requirements into technical specs and managed backlog prioritization to absorb mid-sprint requests without slipping milestones.</li>
+        </ul>
+        <div class="role-tags">
+          <span>.NET 10</span><span>GraphQL</span><span>Google Cloud</span><span>Agentic AI / MCP</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-top">
+          <span class="role-title">Technical Lead</span>
+          <span class="role-org">PureSoftware Ltd</span>
+          <span class="role-time mono">Sep 2021 — Aug 2025</span>
+        </div>
+        <div class="role-project">Publication Planning Platform — Life Sciences &amp; Research</div>
+        <ul>
+          <li>Defined and delivered a configurable platform automating end-to-end publication planning — approvals, reviews, and journal submissions — reducing manual effort and widening research reach.</li>
+          <li>Partnered with medical communication, R&amp;D, and marketing teams to align the product with compliance and business goals.</li>
+          <li>Owned the backlog — epics, user stories, acceptance criteria — and coached the team to improve velocity and predictability.</li>
+          <li>Spearheaded AI-generated plain-language summaries to cut content creation time, and led API design, Azure integration, and CI/CD.</li>
+        </ul>
+        <div class="role-project" style="margin-top:26px;">Automotive Dealer Portal — OEM Campaign &amp; Incentives</div>
+        <ul>
+          <li>Modernized a legacy dealer portal into a scalable campaign platform, helping OEMs target customers and grow quarterly revenue.</li>
+          <li>Integrated external analytics and behavioral data to power personalized offers, and migrated the backend to microservices for campaign surges.</li>
+          <li>Ran daily standups and held production turnaround under 24 hours, with live KPI dashboards for leadership.</li>
+        </ul>
+        <div class="role-tags">
+          <span>Azure</span><span>API Design</span><span>Microservices</span><span>CI/CD</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-top">
+          <span class="role-title">Product Consultant</span>
+          <span class="role-org">Infosys</span>
+          <span class="role-time mono">Feb 2021 — Sep 2021</span>
+        </div>
+        <div class="role-project">Mining Operations Platform — Geological Data &amp; Analytics</div>
+        <ul>
+          <li>Delivered a data-driven system processing large-scale geological datasets, helping engineers identify blackout zones and optimize ore extraction.</li>
+          <li>Led workshops with mining engineers to capture blackout-zone mapping and real-time monitoring workflows, shipping an MVP in three months.</li>
+          <li>Guided agile teams designing scalable microservices for high-volume data ingestion and external system integration.</li>
+        </ul>
+        <div class="role-tags">
+          <span>Microservices</span><span>Data Analytics</span><span>MVP Delivery</span>
+        </div>
+      </div>
+
+      <div class="role compact">
+        <div class="role-top">
+          <span class="role-title">Senior Software Engineer</span>
+          <span class="role-org">Johnson Controls</span>
+          <span class="role-time mono">Jun 2017 — Nov 2019</span>
+        </div>
+      </div>
+
+      <div class="role compact">
+        <div class="role-top">
+          <span class="role-title">Software Trainee</span>
+          <span class="role-org">Blue Star Limited</span>
+          <span class="role-time mono">Dec 2013 — May 2015</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-grid">
+
+      <div class="skill-group">
+        <h3>/ product management</h3>
+        <div class="pillbox">
+          <span>Product Strategy</span><span>Roadmapping</span><span>Agile Scrum</span>
+          <span>User Stories</span><span>PRDs</span><span>Competitive Analysis</span>
+          <span>Business Research</span><span>Stakeholder Management</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>/ technical</h3>
+        <div class="pillbox">
+          <span>.NET Core / .NET 10</span><span>GraphQL</span><span>Microservices</span>
+          <span>Angular</span><span>Web API</span><span>SQL / NoSQL</span>
+          <span>Azure</span><span>GCP</span><span>Docker</span><span>Kubernetes</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>/ ai &amp; ml</h3>
+        <div class="pillbox">
+          <span>Agentic AI</span><span>MCP Integration</span>
+          <span>AI-assisted Content Generation</span><span>Skills-based Development</span>
+          <span>Vibe Coding</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>/ workflow &amp; design</h3>
+        <div class="pillbox">
+          <span>Jira</span><span>Azure DevOps</span><span>Notion</span>
+          <span>Figma</span><span>Canva</span><span>Lucidchart</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <div class="section-head" style="margin-bottom:24px;">
+          <h2 style="font-size:24px;">Education</h2>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Master of Business Administration</div>
+          <div class="entry-sub">Manipal Academy of Higher Education (MAHE) — in progress</div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">M.Sc, Computer Science</div>
+          <div class="entry-sub">Shivaji University, Kolhapur</div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">B.Sc, Computer Science</div>
+          <div class="entry-sub">Shivaji University, Kolhapur</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head" style="margin-bottom:24px;">
+          <h2 style="font-size:24px;">Certifications</h2>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Certified Scrum Product Owner® (CSPO®)</div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">PMI Agile Certified Practitioner (PMI-ACP)</div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Certificate in Product Management Foundation</div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Generative AI — The Ultimate Guide</div>
+          <div class="entry-sub">Beginner to Leader in AI</div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Jira User</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Awards</h2>
+    </div>
+    <div class="awards">
+      <div class="award">
+        <div class="award-name">Embrace Change</div>
+        <div class="award-desc">Modernized legacy systems and improved design standards.</div>
+      </div>
+      <div class="award">
+        <div class="award-name">Deliver Results</div>
+        <div class="award-desc">Met aggressive delivery targets for high-priority components.</div>
+      </div>
+      <div class="award">
+        <div class="award-name">Tech Excellence</div>
+        <div class="award-desc">Led timely releases of major feature sets.</div>
+      </div>
+      <div class="award">
+        <div class="award-name">Bravo &amp; Arjuna</div>
+        <div class="award-desc">Recognized for breakthrough performance and collaboration.</div>
+      </div>
+      <div class="award">
+        <div class="award-name">Work with Purpose</div>
+        <div class="award-desc">Implemented dashboards, Kibana alerts, and logging standards for proactive monitoring.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Building a product roadmap, or a platform migration? Let's talk.</h2>
+    <div class="cta-row">
+      <a class="cta primary" href="mailto:reshmas2026@gmail.com">Email Reshma</a>
+      <a class="cta ghost" href="https://www.linkedin.com/in/reshma-kulal" target="_blank" rel="noopener">View LinkedIn</a>
+    </div>
+    <div class="foot-meta">
+      <span>Reshma Kulal — Bengaluru, Karnataka, India</span>
+      <span>+91 89711 84699</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
